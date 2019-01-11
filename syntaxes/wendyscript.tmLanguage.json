@@ -1,0 +1,61 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "WendyScript",
+    "patterns": [
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#constants"
+        }
+    ],
+    "repository": {
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "comment.line.double-slash",
+                    "match": "//.+"
+                },
+                {
+                    "name": "comment.block",
+                    "match": "/\\*.+\\*/"
+                },
+                {
+                    "name": "keyword.control.wendyscript",
+                    "match": "\\b(if|in|for|req|let|ret|dec|inc|struct|input|else|time|native|import)\\b"
+                },
+                {
+                    "name": "storage.type",
+                    "match": "<(([a-z]|[A-Z]|_|:)+)>"
+                },
+                {
+                    "name": "keyword.operator",
+                    "match": "(->|>=|<=|=>|=|\\+|\\-|\\*|\\\\|\\/|\\%|>|<|\\b(and|or|typeof)\\b)"
+                }
+            ]
+        },
+        "strings": {
+            "name": "string.quoted.double.wendyscript",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.wendyscript",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "constants": {
+            "patterns": [
+                {
+                    "name": "constant.numeric",
+                    "match": "\\b\\d*\\.?\\d+\\b"
+                }
+            ]
+        }
+    },
+    "scopeName": "source.wendy"
+}

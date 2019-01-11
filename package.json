@@ -1,0 +1,26 @@
+{
+    "name": "wendy-syntax-highlighter",
+    "displayName": "Wendy Syntax Highlighter",
+    "description": "Language support for WendyScript",
+    "version": "0.0.1",
+    "publisher": "FelixGuo",
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "wendyscript",
+            "aliases": ["WendyScript", "wendyscript"],
+            "extensions": [".w"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "wendyscript",
+            "scopeName": "source.wendy",
+            "path": "./syntaxes/wendyscript.tmLanguage.json"
+        }]
+    }
+}
